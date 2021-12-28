@@ -96,7 +96,7 @@ class Barang extends REST_Controller
             ], REST_Controller::HTTP_NO_CONTENT);
         } else {
             $this->response([
-                'status' => true,
+                'status' => false,
                 'message' => 'Tidak berhasil mengupdate barang!'
             ], REST_Controller::HTTP_BAD_REQUEST);
         }

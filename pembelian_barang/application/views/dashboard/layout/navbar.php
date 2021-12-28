@@ -6,12 +6,33 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Data Barang</a>
+          <?php if(isset($active_dashboard)) { ?>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="<?= base_url()?>dashboard">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about">Data Transaksi</a>
+          <?php }else{  ?>
+            <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="<?= base_url()?>dashboard">Home</a>
           </li>
+            <?php } ?>
+            <?php if(isset($active_barang)) { ?>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="<?= base_url()?>dashboard/data_barang">Data Barang</a>
+          </li>
+          <?php }else{ ?>
+            <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="<?= base_url()?>dashboard/data_barang">Data Barang</a>
+          </li>
+            <?php } ?>
+            <?php if(isset($active_transaksi)) { ?>
+          <li class="nav-item">
+            <a class="nav-link active" href="<?= base_url()?>dashboard/data_transaksi">Data Transaksi</a>
+          </li>
+          <?php }else{ ?>
+            <li class="nav-item">
+            <a class="nav-link" href="<?= base_url()?>dashboard/data_transaksi">Data Transaksi</a>
+          </li>
+            <?php }?>
           <li class="nav-item">
             <a class="nav-link" href="<?= base_url()?>login/logout">Logout</a>
           </li>

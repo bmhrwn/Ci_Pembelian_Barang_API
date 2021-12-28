@@ -23,6 +23,8 @@ class Login extends CI_Controller
                 $db_password = $dataUsers['password'];
                 if ($password == $db_password) {
                     $this->session->set_userdata('username', $dataUsers['username']);
+                    $this->session->set_userdata('nama_lengkap', $dataUsers['nama_lengkap']);
+                    $this->session->set_userdata('email', $dataUsers['email']);
                     redirect(base_url('dashboard'));
                 } else {
                     $this->session->set_flashdata('msg', 'Password Anda Masukkan Salah!');
